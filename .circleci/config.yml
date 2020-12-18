@@ -11,7 +11,7 @@ jobs:
     environment:
       APP_DEBUG: true
       APP_ENV: circle
-      APP_KEY: base64:wawOkgfuZjiryQqZho8Ng7HJ9Vr/9lAKEwsEXyhbfaI=
+      APP_KEY: base64:8RPAbel9/o9KoSA2nOWqYTceP7VFNwa8N4H8pCRMtAc=
     working_directory: ~/repo
     steps:
       - checkout
@@ -38,7 +38,7 @@ jobs:
       - run:
           name: wait mysql
           command: |
-            dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
+            dockerize -wait tcp://127.0.0.1:3306 -timeout 60s
             mysql -h 127.0.0.1 -u root --execute="SELECT 1 as value FROM DUAL WHERE true"
             mysql -h 127.0.0.1 -u root --execute="SHOW databases"
       - run:
