@@ -30,7 +30,7 @@ jobs:
           command: composer install -n --prefer-dist
       - save_cache: # composer.jsonをキャッシュ
           paths:
-           ./vendor
+            - ./vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
       - run: # envファイルをcircleci用のものに変更
           name: env_copy
