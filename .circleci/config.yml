@@ -3,15 +3,15 @@ jobs:
   build: # テストを行うworkflow
     docker:
       - image: circleci/php:7.2.15-fpm
-        environment:
-          - APP_DEBUG: true
-          - APP_ENV: circle
-          - APP_KEY: base64:wawOkgfuZjiryQqZho8Ng7HJ9Vr/9lAKEwsEXyhbfaI=
       - image: circleci/mysql:5.7
         environment: # MySQLの初期設定
-          - MYSQL_USER: root
-          - MYSQL_PASSWORD: root
-          - MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_USER: root
+          MYSQL_PASSWORD: root
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    environment:
+      APP_DEBUG: true
+      APP_ENV: circle
+      APP_KEY: base64:wawOkgfuZjiryQqZho8Ng7HJ9Vr/9lAKEwsEXyhbfaI=
     working_directory: ~/repo
     steps:
       - checkout
