@@ -23,8 +23,8 @@ jobs:
             sudo docker-php-ext-install pdo_mysql gd
       - restore_cache: # composer.jsonのキャッシュがあれば利用
           keys:
-            v1-dependencies-{{ checksum "composer.json" }}
-            v1-dependencies-
+          - v1-dependencies-{{ checksum "composer.json" }}
+          - v1-dependencies-
       - run:
           name: composer install
           command: composer install -n --prefer-dist
