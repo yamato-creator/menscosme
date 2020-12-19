@@ -28,7 +28,6 @@ jobs:
       - restore_cache: # composer.jsonのキャッシュがあれば利用
           keys:
           - v1-dependencies-{{ checksum "composer.json" }}
-          - v1-dependencies-
       - run:
           name: composer install
           command: composer install -n --prefer-dist
