@@ -1,17 +1,13 @@
-version: 2
+version: 2.1
 jobs:
   build: # テストを行うworkflow
     docker:
       - image: circleci/php:7.2.15-fpm
-        envirionment:
-          - APP_DEBUG: true
-          - APP_ENV: circle
-          - APP_KEY: base64:wawOkgfuZjiryQqZho8Ng7HJ9Vr/9lAKEwsEXyhbfaI=
       - image: circleci/mysql:5.7
-        envirionment: # MySQLの初期設定
-          - MYSQL_USER: root
-          - MYSQL_PASSWORD: root
-          - MYSQL_ALLOW_EMPTY_PASSWORD: yes
+        environment: # MySQLの初期設定
+          MYSQL_USER: docker
+          MYSQL_PASSWORD: docker
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
     working_directory: ~/repo
     steps:
       - checkout
@@ -24,7 +20,6 @@ jobs:
       - restore_cache: # composer.jsonのキャッシュがあれば利用
           keys:
           - v1-dependencies-{{ checksum "composer.json" }}
-          - v1-dependencies-
       - run:
           name: composer install
           command: composer install -n --prefer-dist
@@ -38,7 +33,7 @@ jobs:
       - run:
           name: wait mysql
           command: |
-            dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
+            dockerize -wait tcp://127.0.0.1:3306 -timeout 60s
             mysql -h 127.0.0.1 -u root --execute="SELECT 1 as value FROM DUAL WHERE true"
             mysql -h 127.0.0.1 -u root --execute="SHOW databases"
       - run:
@@ -91,7 +86,6 @@ jobs:
 
 orbs:
   aws-cli: circleci/aws-cli@1.0.0
-
 workflows:
   version: 2
   build_deploy:
