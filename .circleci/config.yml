@@ -5,9 +5,17 @@ jobs:
       - image: circleci/php:7.2.15-fpm
       - image: circleci/mysql:5.7
         environment: # MySQLの初期設定
-          MYSQL_USER: root
-          MYSQL_PASSWORD: root
+          MYSQL_USER: docker
+          MYSQL_PASSWORD: docker
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    environment:
+      APP_ENV: circle
+      DB_CONNECTION: mysql
+      DB_HOST: db-host
+      DB_PORT: 3306
+      DB_DATABASE: reviews
+      DB_USERNAME: root
+      DB_PASSWORD: root
     working_directory: ~/repo
     steps:
       - checkout
