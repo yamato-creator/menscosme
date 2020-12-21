@@ -6,10 +6,6 @@ phases:
       - composer install -n --no-dev --prefer-dist
       - npm ci
 
-  build:
-    commands:
-      - npm run prod
-
 artifacts:
   files:
     - './**/*'
