@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>{{$user->name}}さんの欲しいものリスト</h1>
+<h1 class="text-center font-family-Tahoma">{{$user->name}}さんの欲しいものリスト</h1>
 @foreach($products as $product)
     @if ((in_array($user->id, array_column($product->wishlists->toArray(), 'user_id'), TRUE)))
         <div class="container">
