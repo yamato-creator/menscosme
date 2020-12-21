@@ -1,16 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-<form method="GET" action="{{ url('tweets')}}">
-  @csrf
-  <div class="form-group">
-    <label>ツイートを検索</label>
-    <input type="text" class="form-control col-md-5" placeholder="検索" name="search">
-  </div>
-  <button type="submit" class="btn btn-primary col-md-5">検索</button>
-</form>
 <div class="container">
     <div class="row justify-content-center">
+        <div class="col-md-8 mb-3">
+            <form method="GET" action="{{ url('tweets')}}">
+            @csrf
+            <div class="form-group">
+                <label>ツイートを検索</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="例）ブランド、美白、毛穴" name="search">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+            </form>
+        </div>
         <div class="col-md-8 mb-3 text-right">
             <a href="{{ url('users') }}">ユーザ一覧 <i class="fas fa-users" class="fa-fw"></i> </a>
         </div>
