@@ -33,7 +33,7 @@ class TweetsController extends Controller
             }
         };
 
-        $tweets = $query->orderBy('created_at', 'desc')->get();
+        $tweets = $query->orderBy('created_at', 'desc')->paginate(10);
 
         return view('tweets.index', [
             'user'   => $user,
