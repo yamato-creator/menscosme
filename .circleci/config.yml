@@ -110,9 +110,9 @@ workflows:
               only:
                 - main
       - deploy_tmp:
-            requires:
-              - build
-            filters:
-              branches:
-                only:
-                  - main
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
