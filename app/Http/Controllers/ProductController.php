@@ -40,7 +40,7 @@ class ProductController extends Controller
             }
         };
 
-        $products = $query->orderBy('created_at', 'desc')->get();
+        $products = $query->orderBy('created_at', 'desc')->paginate(10);
 
         // $product_ids = Product::select('id')->get();
 
