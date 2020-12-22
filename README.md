@@ -1,15 +1,14 @@
 # メンズコスメ｜口コミサイト
- 
-主に男性のコスメ・化粧品・美容の有益な情報を共有し合うサービス。
- 
-## URL
- 
-"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
- 
-## アプリ作成の目的
- 
-注意点などがあれば書く
- 
+
+## アプリ概要
+概要：主に男性のコスメ・化粧品・美容の有益な情報を共有し合うサービス。
+
+## 作成した経緯
+
+
+## リンク
+
+
 ## 機能一覧
 ### ユーザー機能
 - ユーザー登録・編集・削除
@@ -36,27 +35,43 @@
 - テスト
  
 ## 使用技術
-### フロント
+### フロントエンド
 - HTML
 - CSS
 - JavaScript
 - jQuery
 - bootstrap
+
 ### バックエンド
 - PHP 7.2.33
 - Laravel 7.30.0
-### サーバー
+- PHPUnit
+
+### インフラストラクチャー
+- MySQL 5.7.32
 - Nginx
 - PHP-FPM
+- Docker
+- docker-compose
+- CircleCI(CI/CD)
 
-### DB
-- MySQL 5.7.32
 ### インフラ・開発環境等
 - AWS(EC2,RDS,S3,VPC,Route53,CodeDeploy,CodeCommit,CodeBuild,CodePipeline)
 - Docker/docker-compose
 - CircleCI(CI/CD)
+
+### AWS
+    - EC2
+    - RDS
+    - S3
+    - VPC
+    - Route53
+    - CodeDeploy
+    - CodeCommit
+    - CodeBuild
+    - CodePipeline
+
 ### その他
-- PHPUnit
 - Slack
 
 ## インフラ構成図
