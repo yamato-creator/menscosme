@@ -49,15 +49,10 @@
 
 ### インフラストラクチャー
 - MySQL 5.7.32
-- Nginx
+- Nginx 1.15
 - PHP-FPM
-- Docker
-- docker-compose
-- CircleCI(CI/CD)
-
-### インフラ・開発環境等
-- AWS(EC2,RDS,S3,VPC,Route53,CodeDeploy,CodeCommit,CodeBuild,CodePipeline)
-- Docker/docker-compose
+- Docker 20.10.0
+- docker-compose 1.27.4
 - CircleCI(CI/CD)
 
 ### AWS
