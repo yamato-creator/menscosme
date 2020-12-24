@@ -38,7 +38,11 @@
                                 </div>
                             </div>
 
-                            <img src="/storage/images/{{$product->product_image}}">
+                            @if(!is_null($product->product_image))
+                            <img src="{{ asset('images/' .$product->product_image) }}">
+                            @else
+                            <img src="{{ asset('default_product_image/default.jpeg') }}">
+                            @endif
 
                             <div class="form-group row mb-0">
                             <p>ブランド名</p>

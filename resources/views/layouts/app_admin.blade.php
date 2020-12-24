@@ -26,9 +26,16 @@
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
-                    <a class="navbar-brand" href="{{ route('products.index') }}">
+                @guest
+                    <a class="navbar-brand" href="{{ route('admin.login') }}">
                         {{ config('app.name', 'Laravel') }}管理画面
                     </a>
+                @endguest
+                @if(Auth::check())
+                    <a class="navbar-brand" href="{{ url('admin/products') }}">
+                        {{ config('app.name', 'Laravel') }}管理画面
+                    </a>
+                @endif
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -49,7 +56,7 @@
                             @else
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <img src="{{ asset('storage/default_profile_image/admin.jpeg') }}" class="rounded-circle" width="50" height="50">
+                                        <img src="{{ asset('default_profile_image/admin.jpeg') }}" class="rounded-circle" width="50" height="50">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a href="{{ route('admin.logout') }}" class="dropdown-item"
