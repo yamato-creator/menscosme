@@ -12,15 +12,15 @@ class AdminsTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i <= 10; $i++) {
+
             Admin::create([
-                'name'    => 'TEST' .$i,
-                'email' => 'test' .$i .'@test.com',
+                'name'           => 'TEST1',
+                'email'          => 'test1@test.com',
                 'password'       => Hash::make('11111111'),
                 'remember_token' => Str::random(10),
-                'created_at' => now(),
-                'updated_at' => now()
+                'created_at'     => now(),
+                'updated_at'     => now()
             ]);
-        }
+
     }
 }

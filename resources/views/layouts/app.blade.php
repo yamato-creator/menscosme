@@ -50,6 +50,9 @@
                                         <a class="nav-link" href="{{ route('register') }}">{{ __('登録') }}</a>
                                     </li>
                                 @endif
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.login') }}">{{ __('管理人') }}</a>
+                                </li>
                             @else
                                 <li class="nav-item mr-5">
                                     <a href="{{ url('products') }}" class="btn btn-md">商品一覧</a>

@@ -8,7 +8,11 @@
             <div class="card">
                 <div class="card-haeder p-3 w-100 d-flex">
                     <div class="ml-2 d-flex flex-column">
-                    <img src="/storage/images/{{$product->product_image}}">
+                        @if(!is_null($product->product_image))
+                        <img src="{{ asset('images/' .$product->product_image) }}">
+                        @else
+                        <img src="{{ asset('default_product_image/default.jpeg') }}">
+                        @endif
                         <p class="mb-0">{{ $product->product_name }}</p>
                         <p class="mb-0">{{ $product->bland_name }}</p>
                         <p class="mb-0">{{ $product->item_category }}</p>
