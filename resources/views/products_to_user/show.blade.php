@@ -10,9 +10,9 @@
                 <div class="card-haeder p-3 w-100 d-flex">
                     <div class="ml-2 d-flex flex-column">
                         @if(!is_null($product->product_image))
-                        <img src="{{ asset('storage/images/' .$product->product_image) }}">
+                        <img src="{{ asset('images/' .$product->product_image) }}">
                         @else
-                        <img src="{{ asset('/default_product_image/DD7044DB-525D-439D-8613-D8EAB01FA118.jpeg') }}">
+                        <img src="{{ asset('default_product_image/default.jpeg') }}">
                         @endif
                         <p class="mb-0">口コミ平均評価 : @if($average_star == 1)
                                     ⭐️
