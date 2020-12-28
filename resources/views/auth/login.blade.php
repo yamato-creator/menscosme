@@ -54,6 +54,13 @@
                             </div>
                         </div>
                     </form>
+                    <div class="form-group row mb-0 mt-1">
+                        <div class="col-md-8 offset-md-4">
+                            <a href="/login/guest">
+                                <button type="submit" class="btn btn-secondary">簡単ログイン</button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

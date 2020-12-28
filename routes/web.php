@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', function () { return redirect('/login'); });
+Route::get('/login/guest', 'Auth\LoginController@guestLogin')->name('guest.login');
 
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('/', function () { return redirect('/admin/home'); });
     Route::get('login', 'Admin\LoginController@showLoginForm')->name('admin.login');
     Route::post('login', 'Admin\LoginController@login');
 });
@@ -46,5 +46,5 @@ Route::group(['middleware' => 'auth:user'], function(){
    Route::get('wishlists/show', 'WishlistsController@show', ['only' => ['show']])->name('wishlists.show');
 });
 
-Route::resource('products', 'ProductController', ['only' => ['index']]);
-Route::get('products/show/{id}', 'ProductController@show')->name('products.show');
+// Route::resource('products', 'ProductController', ['only' => ['index']]);
+// Route::get('products/show/{id}', 'ProductController@show')->name('products.show');
