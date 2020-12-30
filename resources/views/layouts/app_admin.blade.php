@@ -12,6 +12,7 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
 
+        <link href="{{ asset('css/test.css') }}" rel="stylesheet">
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -52,6 +53,9 @@
                             @guest
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('admin.login') }}">{{ __('ログイン') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('ユーザー画面に戻る') }}</a>
                                 </li>
                             @else
                                 <li class="nav-item dropdown">
