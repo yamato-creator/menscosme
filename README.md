@@ -70,7 +70,7 @@
     - CodePipeline
 
 ### その他
-- Slack
+- Slack(AWSでビルド、デプロイ成功でSlackに通知)
 
 ## インフラ構成図
 <img width="618" alt="AWS構成図" src="">
