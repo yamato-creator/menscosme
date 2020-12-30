@@ -1,25 +1,26 @@
 @extends('layouts.app_admin')
 
 @section('content')
-商品詳細
 <div class="container">
     <div class="row justify-content-center mb-5">
         <div class="col-md-8 mb-3">
             <div class="card">
-                <div class="card-haeder p-3 w-100 d-flex">
-                    <div class="ml-2 d-flex flex-column">
+                <div class="card-haeder p-3 w-100">
+                    <div>
                         @if(!is_null($product->product_image))
-                        <img src="{{ asset('images/' .$product->product_image) }}">
+                        <img src="{{ asset('/storage/images/' .$product->product_image) }}">
                         @else
-                        <img src="{{ asset('default_product_image/default.jpeg') }}">
+                        <img src="{{ asset('default_product_image/default.png') }}">
                         @endif
-                        <p class="mb-0">{{ $product->product_name }}</p>
-                        <p class="mb-0">{{ $product->bland_name }}</p>
-                        <p class="mb-0">{{ $product->item_category }}</p>
-                        <p class="mb-0">{{ $product->product_description }}</p>
-                        <p class="mb-0">{{ $product->price }}</p>
-                        <p class="mb-0">{{ $product->capacity }}</p>
-                        <p class="mb-0">{{ $product->url }}</p>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <p class="mb-1">商品名: {{ $product->product_name }}</p>
+                        <p class="mb-1">ブランド名: {{ $product->bland_name }}</p>
+                        <p class="mb-1">アイテムカテゴリ: {{ $product->item_category }}</p>
+                        <p class="mb-1">商品説明: {{ $product->product_description }}</p>
+                        <p class="mb-1">相場価格: {{ $product->price }}</p>
+                        <p class="mb-1">容量: {{ $product->capacity }}</p>
+                        <p class="mb-1">URL: {{ $product->url }}</p>
                     </div>
                 </div>
                 @if(Auth::check())

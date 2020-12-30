@@ -21,7 +21,7 @@
                         <div class="d-flex">
                             <div>
                                 @if ($user->id === Auth::user()->id)
-                                    <a href="{{ url('users/' .$user->id .'/edit') }}" class="btn btn-primary">プロフィールを編集する</a>
+                                    <a href="{{ url('users/' .$user->id .'/edit') }}" class="btn btn-primary">プロフィール編集</a>
                                 @else
                                     @if ($is_following)
                                         <form action="{{ route('unfollow', ['user' => $user->id]) }}" method="POST">
@@ -46,15 +46,15 @@
                         </div>
                         <div class="d-flex justify-content-end">
                             <div class="p-2 d-flex flex-column align-items-center">
-                                <p class="font-weight-bold">ツイート数</p>
+                                <p class="font-weight-bold">ツイート</p>
                                 <span>{{ $tweet_count }}</span>
                             </div>
                             <div class="p-2 d-flex flex-column align-items-center">
-                                <p class="font-weight-bold">フォロー数</p>
+                                <p class="font-weight-bold">フォロー</p>
                                 <span>{{ $follow_count }}</span>
                             </div>
                             <div class="p-2 d-flex flex-column align-items-center">
-                                <p class="font-weight-bold">フォロワー数</p>
+                                <p class="font-weight-bold">フォロワー</p>
                                 <span>{{ $follower_count }}</span>
                             </div>
                         </div>

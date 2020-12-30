@@ -20,7 +20,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::orderBy('created_at', 'desc')->paginate(10);
+        $products = Product::orderBy('created_at', 'desc')->paginate(9);
 
         return view('products.index', [
             'products' => $products
@@ -140,7 +140,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect(route('products.show', [
+        return redirect(action('Admin\ProductController@show', [
             'id' => $id
         ]));
     }
