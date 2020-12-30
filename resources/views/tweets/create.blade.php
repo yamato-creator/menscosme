@@ -24,7 +24,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <textarea class="form-control @error('text') is-invalid @enderror" name="text" required autocomplete="text" rows="4">{{ old('text') }}</textarea>
+                                <textarea class="form-control @error('text') is-invalid @enderror" placeholder="自由につぶやきましょう！" name="text" required autocomplete="text" rows="4">{{ old('text') }}</textarea>
 
                                 @error('text')
                                     <span class="invalid-feedback" role="alert">
