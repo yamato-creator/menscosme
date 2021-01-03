@@ -56,7 +56,7 @@
                                 </li>
                             @else
                                 <li class="nav-item mr-5">
-                                    <a href="{{ url('products') }}" class="btn btn-md">商品一覧</a>
+                                    <a href="{{ url('products/index') }}" class="btn btn-md">商品一覧</a>
                                     <a href="{{ url('wishlists/show') }}" class="btn btn-md">欲しいものリスト</a>
                                     <a href="{{ url('users') }}" class="btn btn-md">ユーザ一覧</a>
                                     <a href="{{ url('tweets') }}" class="btn btn-md">ツイート一覧</a>
