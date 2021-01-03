@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10 mb-3">
-            <form method="GET" action="{{ url('products')}}">
+            <form method="GET" action="{{ url('products/index')}}">
             @csrf
             <div class="form-group">
                 <label>商品を検索</label>
