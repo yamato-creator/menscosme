@@ -45,7 +45,7 @@ class LoginController extends Controller
         $password = '11111111';
 
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            return redirect()->route('products.index');
+            return redirect()->action('ProductController@index');
         }
 
         return redirect('/login');
