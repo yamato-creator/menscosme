@@ -28,6 +28,22 @@
   border-top-right-radius: 3px;
 }
 
+.product p {
+  max-width: 229px;
+  display:block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.product p a {
+  max-width: 229px;
+  display:block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .product .panel-body {
   height: 150px;
 }

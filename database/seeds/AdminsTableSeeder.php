@@ -14,8 +14,8 @@ class AdminsTableSeeder extends Seeder
     {
 
             Admin::create([
-                'name'           => 'TEST1',
-                'email'          => 'test1@test.com',
+                'name'           => 'admin_test',
+                'email'          => 'admin@test.com',
                 'password'       => Hash::make('11111111'),
                 'remember_token' => Str::random(10),
                 'created_at'     => now(),

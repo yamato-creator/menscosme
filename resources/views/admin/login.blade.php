@@ -48,6 +48,12 @@
                             </div>
                         </div>
                     </form>
+                    <div class="form-group row mb-0 mt-1">
+                        <div class="col-md-8 offset-md-4">
+                            <p>メールアドレス: admin@test.com</p>
+                            <p>パスワード: 11111111</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
