@@ -40,7 +40,8 @@ Route::group(['middleware' => 'auth:user'], function(){
    Route::resource('tweets', 'TweetsController', ['only' => ['index', 'create', 'store', 'show', 'edit', 'update', 'destroy']]);
    Route::resource('comments', 'CommentsController', ['only' => ['store']]);
    Route::resource('favorites', 'FavoritesController', ['only' => ['store', 'destroy']]);
-   Route::resource('products', 'ProductController', ['only' => ['index', 'show']]);
+   Route::get('products/index', 'ProductController@index');
+   Route::get('products/show/{id}', 'ProductController@show');
    Route::resource('reviews', 'ReviewsController', ['only' => ['store', 'destroy']]);
    Route::resource('wishlists', 'WishlistsController', ['only' => ['store','destroy']]);
    Route::get('wishlists/show', 'WishlistsController@show', ['only' => ['show']])->name('wishlists.show');
