@@ -30,7 +30,7 @@
                                 <i class="fas fa-ellipsis-v fa-fw"></i>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <form method="POST" action="{{ route('products.destroy', ['id' => $product->id ]) }}"  class="mb-0">
+                                <form method="POST" action="{{ route('admin.destroy', ['id' => $product->id ]) }}"  class="mb-0">
                                     @csrf
                                     <a href="{{ url('admin/products/edit/'.$product->id ) }}" class="dropdown-item">編集</a>
                                     <button  class="dropdown-item del-btn">削除</button>

@@ -6,7 +6,7 @@
         <div class="col-md-8 mb-3">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('products.update', ['id' => $product->id ]) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin.update', ['id' => $product->id ]) }}" enctype="multipart/form-data">
                         @csrf
                             <div class="form-group row mb-0">
                             <p>商品名</p>

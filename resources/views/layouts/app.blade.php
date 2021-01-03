@@ -26,7 +26,7 @@
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
-                    <a class="navbar-brand" href="{{ route('tweets.index') }}">
+                    <a class="navbar-brand" href="{{ route('products.index') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -56,7 +56,7 @@
                                 </li>
                             @else
                                 <li class="nav-item mr-5">
-                                    <a href="{{ url('products/index') }}" class="btn btn-md">商品一覧</a>
+                                    <a href="{{ route('products.index') }}" class="btn btn-md">商品一覧</a>
                                     <a href="{{ url('wishlists/show') }}" class="btn btn-md">欲しいものリスト</a>
                                     <a href="{{ url('users') }}" class="btn btn-md">ユーザ一覧</a>
                                     <a href="{{ url('tweets') }}" class="btn btn-md">ツイート一覧</a>

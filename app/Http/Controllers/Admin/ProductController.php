@@ -71,7 +71,7 @@ class ProductController extends Controller
         $product->save();
 
 
-        return redirect('admin/products');
+        return redirect('admin/products/index');
     }
 
     /**
@@ -156,6 +156,6 @@ class ProductController extends Controller
         $product = product::find($id);
         $product->delete();
 
-        return redirect('admin/products');
+        return redirect('admin/products/index');
     }
 }
