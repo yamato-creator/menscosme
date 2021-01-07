@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use App\Models\User;
@@ -18,10 +19,12 @@ class UsersController extends Controller
      */
     public function index(User $user)
     {
-        $users = $user->getAllUsers(auth()->user()->id);
+        $all_users = $user->getAllUsers(auth()->user()->id);
+        $user = auth()->user();
 
         return view('users.index', [
-            'users'  => $users
+            'all_users'  => $all_users,
+            'user'   => $user
         ]);
     }
 
@@ -101,8 +104,27 @@ class UsersController extends Controller
             'email'         => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)]
         ]);
         $validator->validate();
-        $user->updateProfile($data);
 
+        if (isset($data['profile_image'])) {
+            $file_name = $data['profile_image'];
+            $image = Storage::disk('s3')->putFile('profile_image', $file_name, 'public');
+            $image_path = Storage::disk('s3')->url($image);
+
+            $user::where('id', $user->id)
+                ->update([
+                    'screen_name'   => $data['screen_name'],
+                    'name'          => $data['name'],
+                    'profile_image' => basename($image_path),
+                    'email'         => $data['email'],
+                ]);
+        } else {
+            $user::where('id', $user->id)
+                ->update([
+                    'screen_name'   => $data['screen_name'],
+                    'name'          => $data['name'],
+                    'email'         => $data['email'],
+                ]);
+        }
         return redirect('users/'.$user->id);
     }
 
