@@ -64,10 +64,10 @@
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    @if (!isset($user->profile_image))
-                                        <img src="{{ asset('default_profile_image/twittericon13.jpg') }}" class="rounded-circle" width="50" height="50">
+                                    @if (isset($user->profile_image))
+                                    <img src="https://menscosme-image-ap-northeast-250991450901.s3-ap-northeast-1.amazonaws.com/profile_image/{{ $user->profile_image }}" class="rounded-circle" width="50" height="50">
                                     @else
-                                        <img src="{{ asset('profile_image/' .$user->profile_image) }}" class="rounded-circle" width="50" height="50">
+                                    <img src="{{ asset('/default_profile_image/twittericon13.jpg') }}" class="rounded-circle" width="50" height="50">
                                     @endif
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

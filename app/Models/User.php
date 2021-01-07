@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -73,13 +74,15 @@ class User extends Authenticatable
      public function updateProfile(Array $params)
      {
          if (isset($params['profile_image'])) {
-             $file_name = $params['profile_image']->store('public/profile_image/');
+             $file_name = $params['profile_image'];
+             $image = Storage::disk('s3')->putFile('profile_image', $file_name, 'public');
+             $image_path = Storage::disk('s3')->url($image);
 
              $this::where('id', $this->id)
                  ->update([
                      'screen_name'   => $params['screen_name'],
                      'name'          => $params['name'],
-                     'profile_image' => basename($file_name),
+                     'profile_image' => $file_name,
                      'email'         => $params['email'],
                  ]);
          } else {

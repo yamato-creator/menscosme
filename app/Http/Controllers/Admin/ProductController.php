@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Admins;
@@ -53,8 +54,8 @@ class ProductController extends Controller
             $list = FileUploadServices::fileUpload($imageFile);
             list($extension, $fileNameToStore, $fileData) = $list;
             $data_url = CheckExtensionServices::checkExtension($fileData, $extension);
-            $image = Image::make($data_url);
-            $image->resize(150,150)->save(storage_path() . '/app/public/images/' . $fileNameToStore );
+            $image = Image::make($data_url)->resize(150,150)->encode($extension);
+            $path = Storage::disk('s3')->put('product_image/'.$fileNameToStore,(string)$image, 'public');
 
             $product->product_image = $fileNameToStore;
         }
