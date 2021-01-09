@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Admins;
@@ -45,21 +46,31 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $user = auth()->user();
+        $user_id = $user->id;
         $product = new Product;
 
-        if(!is_null($request->product_image)){
+        // バリデーション
+        Validator::make($request->all(), [
+            'product_image' => 'file|image|max:2048|nullable'
+        ])->validate();
 
-            $imageFile = $request->product_image;
-            $list = FileUploadServices::fileUpload($imageFile);
-            list($extension, $fileNameToStore, $fileData) = $list;
-            $data_url = CheckExtensionServices::checkExtension($fileData, $extension);
-            $image = Image::make($data_url);
-            $image->resize(150,150)->save(storage_path() . '/app/public/images/' . $fileNameToStore );
+        if ($request['product_image']) {
+            $file = $request->file('product_image');
+            $filenameWithExt = $file->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file("product_image")->getClientOriginalExtension();
+            $filenameToStore = $filename."_".time().".".$extension;
 
-            $product->product_image = $fileNameToStore;
+            // 画像を横幅150px・縦幅アスペクト比維持の自動サイズへリサイズ
+            $image = Image::make($file)->resize(150,150);
+
+            // S3に画像をアップロード
+            Storage::disk('s3')->put('product_image/'.$filenameToStore, (string) $image->encode(),'public');
+            $product->product_image = $filenameToStore;
         }
 
-        $product->admin_id = 1;
+        $product->admin_id = $user_id;
         $product->product_name = $request->input('product_name');
         $product->bland_name = $request->input('bland_name');
         $product->item_category = $request->input('item_category');
@@ -71,7 +82,7 @@ class ProductController extends Controller
         $product->save();
 
 
-        return redirect('admin/products');
+        return redirect('admin/products/index');
     }
 
     /**
@@ -113,23 +124,32 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $user = auth()->user();
+        $user_id = $user->id;
         $product = product::find($id);
-
         $id = $product->id;
 
-        if(!is_null($request->product_image)){
-            $imageFile = $request->product_image;
+         // バリデーション
+         Validator::make($request->all(), [
+            'product_image' => 'file|image|max:2048|nullable'
+        ])->validate();
 
-            $list = FileUploadServices::fileUpload($imageFile);
-            list($extension, $fileNameToStore, $fileData) = $list;
-            $data_url = CheckExtensionServices::checkExtension($fileData, $extension);
-            $image = Image::make($data_url);
-            $image->resize(400,400)->save(storage_path() . '/app/public/images/' . $fileNameToStore );
+        if ($request['product_image']) {
+            $file = $request->file('product_image');
+            $filenameWithExt = $file->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file("product_image")->getClientOriginalExtension();
+            $filenameToStore = $filename."_".time().".".$extension;
 
-            $product->product_image = $fileNameToStore;
+            // 画像を横幅150px・縦幅アスペクト比維持の自動サイズへリサイズ
+            $image = Image::make($file)->resize(150,150);
+
+            // S3に画像をアップロード
+            Storage::disk('s3')->put('product_image/'.$filenameToStore, (string) $image->encode(),'public');
+            $product->product_image = $filenameToStore;
         }
 
-        $product->admin_id = 1;
+        $product->admin_id = $user_id;
         $product->product_name = $request->input('product_name');
         $product->bland_name = $request->input('bland_name');
         $product->item_category = $request->input('item_category');
@@ -156,6 +176,6 @@ class ProductController extends Controller
         $product = product::find($id);
         $product->delete();
 
-        return redirect('admin/products');
+        return redirect('admin/products/index');
     }
 }

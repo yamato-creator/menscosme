@@ -8,7 +8,7 @@
                 <div class="card-haeder p-3 w-100">
                     <div>
                         @if(!is_null($product->product_image))
-                        <img src="{{ asset('/storage/images/' .$product->product_image) }}">
+                        <img src="https://menscosme-image-ap-northeast-250991450901.s3-ap-northeast-1.amazonaws.com/product_image/{{ $product->product_image }}">
                         @else
                         <img src="{{ asset('default_product_image/default.png') }}">
                         @endif
@@ -31,7 +31,7 @@
                         <p class="mb-1">商品説明: {{ $product->product_description }}</p>
                         <p class="mb-1">相場価格: {{ $product->price }}</p>
                         <p class="mb-1">容量: {{ $product->capacity }}</p>
-                        <p class="mb-1">URL: {{ $product->url }}</p>
+                        <p class="mb-1">URL: <a href="{{ $product->url }}" target="_blank">{{ $product->url }}</a></p>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                                 @if (!isset($user->profile_image))
                                     <img src="{{ asset('default_profile_image/twittericon13.jpg') }}" class="rounded-circle" width="50" height="50">
                                 @else
-                                    <img src="{{ asset('storage/profile_image/' .$user->profile_image) }}" class="rounded-circle" width="50" height="50">
+                                    <img src="https://menscosme-image-ap-northeast-250991450901.s3-ap-northeast-1.amazonaws.com/profile_image/{{ $user->profile_image }}" class="rounded-circle" width="50" height="50">
                                 @endif
                                     <div class="ml-2 d-flex flex-column">
                                         <p class="mb-0">{{ $user->name }}</p>
@@ -97,7 +97,7 @@
                             @if (!isset($review->user->profile_image))
                                 <img src="{{ asset('default_profile_image/twittericon13.jpg') }}" class="rounded-circle" width="50" height="50">
                             @else
-                                <img src="{{ asset('storage/profile_image/' .$review->user->profile_image) }}" class="rounded-circle" width="50" height="50">
+                                <img src="https://menscosme-image-ap-northeast-250991450901.s3-ap-northeast-1.amazonaws.com/profile_image/{{ $review->user->profile_image }}" class="rounded-circle" width="50" height="50">
                             @endif
                             <div class="ml-2 d-flex flex-column">
                                 <p class="mb-0">{{ $review->user->name }}</p>

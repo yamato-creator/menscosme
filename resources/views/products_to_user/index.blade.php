@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10 mb-3">
-            <form method="GET" action="{{ url('products')}}">
+            <form method="GET" action="{{ url('products/index')}}">
             @csrf
             <div class="form-group">
                 <label>商品を検索</label>
@@ -26,7 +26,7 @@
                     <div class="panel-heading text-center">
                         <a href="{{ url('products/show/' .$product->id) }}">
                             @if(!is_null($product->product_image))
-                            <img src="{{ asset('/storage/images/' .$product->product_image) }}">
+                            <img src="https://menscosme-image-ap-northeast-250991450901.s3-ap-northeast-1.amazonaws.com/product_image/{{ $product->product_image }}">
                             @else
                             <img src="{{ asset('default_product_image/default.png') }}">
                             @endif

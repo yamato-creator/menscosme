@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Update</div>
+                <div class="card-header">更新</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ url('users/' .$user->id) }}" enctype="multipart/form-data">
@@ -16,9 +16,9 @@
                             <label for="profile_image" class="col-md-4 col-form-label text-md-right">{{ __('プロフィール画像') }}</label>
                             <div class="col-md-6 d-flex align-items-center">
                             @if (!isset($user->profile_image))
-                                <img src="{{ asset('default_profile_image/twittericon13.jpg') }}" class="rounded-circle" width="50" height="50">
+                            <img src="{{ asset('default_profile_image/twittericon13.jpg') }}" class="rounded-circle" width="50" height="50">
                             @else
-                                <img src="{{ asset('storage/profile_image/' .$user->profile_image) }}" class="rounded-circle" width="50" height="50">
+                            <img src="https://menscosme-image-ap-northeast-250991450901.s3-ap-northeast-1.amazonaws.com/profile_image/{{ $user->profile_image }}" class="rounded-circle" width="50" height="50">
                             @endif
                                 <input type="file" name="profile_image" class="@error('profile_image') is-invalid @enderror" autocomplete="profile_image">
                                 @error('profile_image')

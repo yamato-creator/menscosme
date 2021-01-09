@@ -26,7 +26,7 @@
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
-                    <a class="navbar-brand" href="{{ route('tweets.index') }}">
+                    <a class="navbar-brand" href="{{ route('products.index') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -56,7 +56,7 @@
                                 </li>
                             @else
                                 <li class="nav-item mr-5">
-                                    <a href="{{ url('products/index') }}" class="btn btn-md">商品一覧</a>
+                                    <a href="{{ route('products.index') }}" class="btn btn-md">商品一覧</a>
                                     <a href="{{ url('wishlists/show') }}" class="btn btn-md">欲しいものリスト</a>
                                     <a href="{{ url('users') }}" class="btn btn-md">ユーザ一覧</a>
                                     <a href="{{ url('tweets') }}" class="btn btn-md">ツイート一覧</a>
@@ -64,10 +64,10 @@
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    @if (!isset($user->profile_image))
-                                        <img src="{{ asset('default_profile_image/twittericon13.jpg') }}" class="rounded-circle" width="50" height="50">
+                                    @if (isset($user->profile_image))
+                                    <img src="https://menscosme-image-ap-northeast-250991450901.s3-ap-northeast-1.amazonaws.com/profile_image/{{ $user->profile_image }}" class="rounded-circle" width="50" height="50">
                                     @else
-                                        <img src="{{ asset('profile_image/' .$user->profile_image) }}" class="rounded-circle" width="50" height="50">
+                                    <img src="{{ asset('/default_profile_image/twittericon13.jpg') }}" class="rounded-circle" width="50" height="50">
                                     @endif
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

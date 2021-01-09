@@ -33,7 +33,7 @@
                     </a>
                 @endguest
                 @if(Auth::check())
-                    <a class="navbar-brand" href="{{ url('admin/products') }}">
+                    <a class="navbar-brand" href="{{ url('admin/products/index') }}">
                         {{ config('app.name', 'Laravel') }}管理画面
                     </a>
                 @endif

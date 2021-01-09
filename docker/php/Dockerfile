@@ -23,7 +23,10 @@ RUN apt-get update \
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /composer
+ENV COMPOSER_MEMORY_LIMIT=-1
 ENV PATH $PATH:/composer/vendor/bin
 WORKDIR /var/www
 RUN composer global require "laravel/installer"
 RUN composer require intervention/image
+RUN composer require league/flysystem-aws-s3-v3 ~1.0
+RUN composer install -n --prefer-dist --no-dev
