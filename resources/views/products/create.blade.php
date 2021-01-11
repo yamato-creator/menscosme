@@ -8,7 +8,7 @@
                 <div class="card-header">商品登録</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('admin.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ action('Admin\ProductController@store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row mb-0">
