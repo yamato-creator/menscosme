@@ -12,7 +12,7 @@
             <div class="col-md-3 col-sm-4 col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">
-                        <a href="{{ url('products/show/' .$product->id) }}">
+                        <a href="{{ url('admin/products/show/' .$product->id) }}">
                             @if(!is_null($product->product_image))
                             <img src="https://menscosme-image-ap-northeast-250991450901.s3-ap-northeast-1.amazonaws.com/product_image/{{ $product->product_image }}">
                             @else

@@ -25,7 +25,7 @@
                                     <form method="POST" action="{{ url('wishlists/' .array_column($product->wishlists->toArray(), 'id', 'user_id')[$user->id]) }}" class="mb-0">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn p-0 border-0 text-danger">欲しいものリスト<i class="fas fa-heart fa-fw"></i></button>
+                                        <button type="submit" class="btn p-0 border-0 text-danger"><i class="fas fa-heart fa-fw"></i></button>
                                     </form>
         @endif
                             </div>
