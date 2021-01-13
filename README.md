@@ -62,6 +62,8 @@
     - RDS
     - S3
     - VPC
+    - ALB
+    - ACM
     - Route53
     - CodeDeploy
     - CodeCommit
