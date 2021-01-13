@@ -77,3 +77,5 @@
 <img width="819" alt="スクリーンショット 2021-01-13 18 54 35" src="https://user-images.githubusercontent.com/63177307/104436539-142dbe00-55d1-11eb-92b0-0d2f5a1e49ad.png">
 
 ## ER図
+<img width="635" alt="スクリーンショット 2021-01-13 19 10 55" src="https://user-images.githubusercontent.com/63177307/104438263-24469d00-55d3-11eb-80ca-f46739393101.png">
+
