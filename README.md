@@ -75,6 +75,7 @@
 
 ## インフラ構成図
 <img width="618" alt="AWS構成図" src="">
+<img width="819" alt="スクリーンショット 2021-01-13 18 54 35" src="https://user-images.githubusercontent.com/63177307/104436539-142dbe00-55d1-11eb-92b0-0d2f5a1e49ad.png">
 
 ## ER図
 <img width="618" alt="ER図" src="">
