@@ -60,6 +60,7 @@ https://menscosme.site
 ### AWS
     - EC2
     - RDS
+    - IAM
     - S3
     - VPC
     - ALB
