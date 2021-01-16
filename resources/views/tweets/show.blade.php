@@ -75,7 +75,7 @@
                             @if (!isset($comment->user->profile_image))
                                 <img src="{{ asset('default_profile_image/twittericon13.jpg') }}" class="rounded-circle" width="50" height="50">
                             @else
-                                <img src="https://menscosme-image-ap-northeast-250991450901.s3-ap-northeast-1.amazonaws.com/profile_image/{{ $user->profile_image }}" class="rounded-circle" width="50" height="50">
+                                <img src="https://menscosme-image-ap-northeast-250991450901.s3-ap-northeast-1.amazonaws.com/profile_image/{{ $comment->user->profile_image }}" class="rounded-circle" width="50" height="50">
                             @endif
                             <div class="ml-2 d-flex flex-column">
                                 <p class="mb-0">{{ $comment->user->name }}</p>
@@ -104,7 +104,7 @@
                                 @if (!isset($comment->user->profile_image))
                                     <img src="{{ asset('default_profile_image/twittericon13.jpg') }}" class="rounded-circle" width="50" height="50">
                                 @else
-                                <img src="https://menscosme-image-ap-northeast-250991450901.s3-ap-northeast-1.amazonaws.com/profile_image/{{ $user->profile_image }}" class="rounded-circle" width="50" height="50">
+                                    <img src="https://menscosme-image-ap-northeast-250991450901.s3-ap-northeast-1.amazonaws.com/profile_image/{{ $user->profile_image }}" class="rounded-circle" width="50" height="50">
                                 @endif
                                     <div class="ml-2 d-flex flex-column">
                                         <p class="mb-0">{{ $user->name }}</p>
