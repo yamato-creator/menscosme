@@ -3,7 +3,8 @@
 「メンズコスメをもっと簡単に探したい」をコンセプトにした情報共有アプリです。  
 商品のクチコミ、ユーザー同士の交流、ユーザー間のコミュニケーションを通じて、男性向け化粧品・美容に関しての情報を共有できます。  
 
-URL: https://menscosme.site
+URL: https://menscosme.site  
+
 <img width="1100" alt="イメージ図" src="https://user-images.githubusercontent.com/63177307/104813967-b5c24300-584f-11eb-8a91-b801eaeb38b3.png">
 
 ## 作成した経緯
