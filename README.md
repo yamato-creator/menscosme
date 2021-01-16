@@ -2,8 +2,8 @@
 
 「メンズコスメをもっと簡単に探したい」をコンセプトにした情報共有アプリです。  
 商品のクチコミ、ユーザー同士の交流、ユーザー間のコミュニケーションを通じて、男性向け化粧品・美容に関しての情報を共有できます。
-<img width="1164" alt="スクリーンショット 2021-01-16 22 45 02" src="https://user-images.githubusercontent.com/63177307/104813967-b5c24300-584f-11eb-8a91-b801eaeb38b3.png">
-<img width="1139" alt="スクリーンショット 2021-01-16 23 05 19" src="https://user-images.githubusercontent.com/63177307/104813913-64b24f00-584f-11eb-9bab-cac05307cc52.png">
+<img width="500" alt="イメージ図1" src="https://user-images.githubusercontent.com/63177307/104813967-b5c24300-584f-11eb-8a91-b801eaeb38b3.png">
+<img width="500" alt="イメージ図2" src="https://user-images.githubusercontent.com/63177307/104813913-64b24f00-584f-11eb-9bab-cac05307cc52.png">
 ## 作成した経緯
 私は男性ですが普段、化粧をすることがあります。  
 男性向けの化粧品情報はまだ少なく、身近に男性で化粧をしている人も居なかったため、情報を共有することができませんでした。  
@@ -75,8 +75,8 @@ https://menscosme.site
 - Slack(AWSでビルド、デプロイ成功でSlackに通知)
 
 ## インフラ構成図
-<img width="819" alt="スクリーンショット 2021-01-13 18 54 35" src="https://user-images.githubusercontent.com/63177307/104436539-142dbe00-55d1-11eb-92b0-0d2f5a1e49ad.png">
+<img width="819" alt="インフラ構成図" src="https://user-images.githubusercontent.com/63177307/104436539-142dbe00-55d1-11eb-92b0-0d2f5a1e49ad.png">
 
 ## ER図
-<img width="635" alt="スクリーンショット 2021-01-13 19 10 55" src="https://user-images.githubusercontent.com/63177307/104438263-24469d00-55d3-11eb-80ca-f46739393101.png">
+<img width="635" alt="ER図" src="https://user-images.githubusercontent.com/63177307/104438263-24469d00-55d3-11eb-80ca-f46739393101.png">
 
