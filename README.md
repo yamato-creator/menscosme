@@ -54,8 +54,7 @@ https://menscosme.site
 - MySQL 5.7.32
 - Nginx 1.15
 - PHP-FPM
-- Docker 20.10.0
-- docker-compose 1.27.4
+- Docker 20.10.0/docker-compose 1.27.4
 - CircleCI(CI/CD)
 
 ### AWS
