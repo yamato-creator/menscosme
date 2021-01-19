@@ -40,9 +40,10 @@ URL: https://menscosme.site
 ### フロントエンド
 - HTML
 - CSS
+- bootstrap
 - JavaScript
 - jQuery
-- bootstrap
+
 
 ### バックエンド
 - PHP 7.2.33
