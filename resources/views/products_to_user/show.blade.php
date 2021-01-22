@@ -31,7 +31,7 @@
                         <p class="mb-1">商品説明: {{ $product->product_description }}</p>
                         <p class="mb-1">相場価格: {{ $product->price }}</p>
                         <p class="mb-1">容量: {{ $product->capacity }}</p>
-                        <p class="mb-1">URL: <a href="{{ $product->url }}" target="_blank">{{ $product->url }}</a></p>
+                        <a href="{{ $product->url }}" target="_blank" class="btn btn-md btn-primary">Amazonで詳しく見る</a>
                     </div>
                 </div>
             </div>
