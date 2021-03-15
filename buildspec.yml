@@ -1,3 +1,4 @@
+# CodeBuildの処理内容を定義する
 version: 0.2
 
 phases:
@@ -6,6 +7,6 @@ phases:
       - composer install -n --no-dev --prefer-dist
       - npm ci
 
-artifacts:
+artifacts: #全てのファイルを指定
   files:
     - './**/*'

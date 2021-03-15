@@ -1,7 +1,8 @@
+# CodeDeployのデプロイ時の処理内容を定義
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: / # デプロイ元
     destination: /home/webapp/menscosme
 
 permissions:
