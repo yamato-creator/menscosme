@@ -70,6 +70,8 @@ URL: https://menscosme.site
     - CodeCommit
     - CodeBuild
     - CodePipeline
+    - SNS
+    - Chatbot
 
 ### その他
 - Slack(AWSでビルド、デプロイ成功でSlackに通知)
