@@ -56,6 +56,7 @@ URL: https://menscosme.site
 - PHP-FPM
 - Docker 20.10.0/docker-compose 1.27.4
 - CircleCI(CI/CD)
+- AWS
 
 ### AWS
     - EC2
